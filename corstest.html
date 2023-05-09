@@ -2,11 +2,13 @@
 <html>
 <body>
 
-<h1>click to getbalance</h1>
+<h1>click to getblockcount</h1>
 
 <input type="text" name="enter1" class="enter" value="mysername" id="usern"/>
 <input type="text" name="enter2" class="enter" value="mypassword" id="passw"/>
-<button id="1" onClick="GetBalance()">GetBalance</button>
+<input type="text" name="enter3" class="enter" value="9902" id="portnr"/>
+<br>
+<button id="1" onClick="GetBalance()">getblockcount</button>
 
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
@@ -15,11 +17,11 @@
 const GetBalance = async () => {
   const body = {
     jsonrpc: "2.0",
-    method: "getbalance",
-    id: ""+new Date(),
+    method: "getblockcount",
+    id: +new Date(),
     params: null,
   };
-  const port = 8332;
+  const port =           document.getElementById('portnr').value;
   const username =       document.getElementById('usern').value;
   const password =       document.getElementById('passw').value;
 
