@@ -2,24 +2,24 @@
 <html>
 <body>
 
-<h1>click to getblockcount</h1>
+<h1>click to getrawtransaction</h1>
 
 <input type="text" name="enter1" class="enter" value="mysername" id="usern"/>
 <input type="text" name="enter2" class="enter" value="mypassword" id="passw"/>
 <input type="text" name="enter3" class="enter" value="9902" id="portnr"/>
 <br>
-<button id="1" onClick="GetBalance()">getblockcount</button>
+<button id="1" onClick="test()">getrawtransaction</button>
 
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
 
 
-const GetBalance = async () => {
+const test = async () => {
   const body = {
     jsonrpc: "2.0",
-    method: "getblockcount",
+    method: "getrawtransaction",
     id: +new Date(),
-    params: null,
+    params: ['145cc51ac911de4ba41fc4ecde58c9b5a1ca3c2d04c1124fd3b9d54473da00e3',0],
   };
   const port =           document.getElementById('portnr').value;
   const username =       document.getElementById('usern').value;
